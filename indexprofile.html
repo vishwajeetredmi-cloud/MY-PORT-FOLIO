@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Raj - Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0d0e12;
+        }
+        header nav a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #4444fc;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin: 0 10px;
+        }
+        .logo {
+            font-size: 20px;
+            color: #4444fc;
+            border: 2px solid #4444fc;
+            padding: 0px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-weight: bold;
+        }
+        body {
+            background-color: #0d0e12;
+            color: #4444fc;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            display: block;
+            margin: 40px auto;
+            border: 2px solid #4444fc;
+        }
+        .status.badge {
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 10px;
+        }
+        h2 {
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            color: #4444fc;
+            margin-bottom: 20px;
+        }
+        .cta-buttons a {
+            display: table;
+            margin: 20px auto;
+            text-decoration: none;
+            color: #4444fc;
+            border: 2px solid #4444fc;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .cta-buttons a:hover {
+            background-color: #4444fc;
+            color: #0d0e12;
+        }
+        .scroll.down {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #4444fc;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+        }
+        .scroll.down::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-left: 2px solid #4444fc;
+            border-bottom: 2px solid #4444fc;
+            transform: rotate(-45deg);
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(10px) rotate(-45deg);
+            }
+        }
+        span {
+            font-size: 26px;
+            color: #4444fc;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 5px 15px;
+            display: inline-block;
+            margin-top: 40px;
+            border: 2px solid #4444fc;
+        }
+        p, ul {
+            color: #ffffff;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AR</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="profile-image">
+                <img src="Ansh raj.jpg" alt="Ansh Raj">
+            </div>
+            <div class="status badge">
+                💻 Exploring HTML/CSS, JavaScript, C, C++, and Python
+            </div>
+            <h1>Ansh Raj</h1>
+            <h2>Budding Multi-Language Developer</h2>
+            <p style="text-align: center; color: #ffffff;">"Building responsive web applications while mastering core programming logic. Crafting front-end experiences with HTML, CSS, and JavaScript, and solving problems using C, C++, and Python."</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">Contact Details</a>
+            </div>
+            <div class="scroll down">
+                Scroll Down
+            </div>
+        </section>
+
+        <section id="about">
+            <span>About Me</span>
+            <p>Hi, I'm Ansh Raj, an aspiring programmer passionate about technology and problem-solving. Currently diving deep into HTML/CSS, JavaScript, C, C++, and Python, and building minor projects to sharpen my coding skills. Always eager to learn and explore new tech.</p>
+        </section>
+
+        <section id="experience">
+            <span>Experience</span>
+            <ul>
+                <li><strong>Learning and practicing foundational concepts of HTML, CSS, JavaScript, C, C++, and Python daily.</strong></li>
+                <li><strong>Working on personal development projects to build strong programming logic.</strong></li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <span>Skills</span>
+            <ul>
+                <li><strong>Programming & Web:</strong> HTML/CSS, JavaScript, C, C++, and Python</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <span>Projects</span>
+            <ul>
+                <li><strong>Project A:</strong> Building my first responsive portfolio website from scratch (In Progress).</li>
+                <li><strong>Project B:</strong> Creating small utility scripts and logic-building programs using Python and C++.</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <span>Education</span>
+            <ul>
+                <li><strong>Secondary School Education (10th Passed)</strong></li>
+                <li>School: Prayag Bharti School, Jehanabad</li>
+                <li>Completed: 2025</li>
+                <li><p style="padding: 0; margin-top: 5px;">Currently deep-diving into Computer Science fundamentals, logic building, and modern web development technologies independently.</p></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <span>Contact Me</span>
+            <p>Email: anshraj@example.com</p>
+        </section>
+    </main>
+
+</body>
+</html>
