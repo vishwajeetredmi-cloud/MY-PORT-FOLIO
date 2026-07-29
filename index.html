@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Raj - Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Background Glow Effect */
+        body {
+            background-color: #0d0e12;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(68, 68, 252, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+            color: #4444fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Sticky Glassmorphism Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: rgba(13, 14, 18, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(68, 68, 252, 0.2);
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            color: #4444fc;
+            text-shadow: 0 0 10px rgba(68, 68, 252, 0.8);
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        /* Glowing Logo */
+        .logo {
+            font-size: 20px;
+            color: #ffffff;
+            border: 2px solid #4444fc;
+            padding: 0px;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-weight: bold;
+            box-shadow: 0 0 12px rgba(68, 68, 252, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 20px rgba(68, 68, 252, 0.9);
+        }
+
+        /* Profile Image with Rotating Gradient Glow */
+        .profile-image {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 40px auto 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #4444fc, #8a2be2, #00f2fe);
+            background-size: 200% 200%;
+            animation: gradientRotate 4s ease infinite;
+            box-shadow: 0 0 25px rgba(68, 68, 252, 0.4);
+        }
+
+        @keyframes gradientRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            display: block;
+            border: none;
+        }
+
+        .status.badge {
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+            background: rgba(68, 68, 252, 0.1);
+            border: 1px solid rgba(68, 68, 252, 0.3);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin: 10px auto;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Animated Gradient Heading */
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            margin-top: 15px;
+            background: linear-gradient(90deg, #ffffff, #8080ff, #00c6ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        h2 {
+            display: block;
+            text-align: center;
+            font-size: 22px;
+            color: #8080ff;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Modern CTA Button Effect */
+        .cta-buttons a {
+            display: table;
+            margin: 25px auto;
+            text-decoration: none;
+            color: #ffffff;
+            border: 2px solid #4444fc;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            background: rgba(68, 68, 252, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(68, 68, 252, 0.2);
+        }
+
+        .cta-buttons a:hover {
+            background-color: #4444fc;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(68, 68, 252, 0.8);
+            transform: translateY(-3px);
+        }
+
+        /* Bounce Animated Scroll Down Indicator */
+        .scroll.down {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #8080ff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .scroll.down:hover {
+            color: #ffffff;
+        }
+
+        .scroll.down::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-left: 2px solid #4444fc;
+            border-bottom: 2px solid #4444fc;
+            transform: rotate(-45deg);
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            40% {
+                transform: translateY(8px) rotate(-45deg);
+            }
+            60% {
+                transform: translateY(4px) rotate(-45deg);
+            }
+        }
+
+        /* Glassmorphism Badge Section Headers */
+        span {
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 8px 20px;
+            display: inline-block;
+            margin-top: 40px;
+            border: 1px solid rgba(68, 68, 252, 0.4);
+            background: rgba(68, 68, 252, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        p, ul {
+            color: #d1d5db;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 15px auto;
+            padding: 0 20px;
+        }
+
+        /* Card Hover Style for Section Content */
+        section {
+            padding: 25px;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        section:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .hero-section {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ak</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="profile-image">
+                <img src="amar.jpg" alt="Ansh Raj">
+            </div>
+            <div class="status badge">
+                💻 Exploring HTML/CSS, JavaScript, C, C++, and Python
+            </div>
+            <h1>Amarjeet Kumar</h1>
+            <h2>Budding Multi-Language Developer</h2>
+            <p style="text-align: center; color: #ffffff;">"Building responsive web applications while mastering core programming logic. Crafting front-end experiences with HTML, CSS, and JavaScript, and solving problems using C, C++, and Python."</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">Contact Details</a>
+            </div>
+            <div class="scroll down">
+                Scroll Down
+            </div>
+        </section>
+
+        <section id="about">
+            <span>About Me</span>
+            <p>Hi, I'm Amarjeet Kumar, an aspiring programmer passionate about technology and problem-solving. Currently diving deep into HTML/CSS, JavaScript, C, C++, and Python, and building minor projects to sharpen my coding skills. Always eager to learn and explore new tech.</p>
+        </section>
+
+        <section id="experience">
+            <span>Experience</span>
+            <ul>
+                <li><strong>Learning and practicing foundational concepts of HTML, CSS, JavaScript, C, C++, and Python daily.</strong></li>
+                <li><strong>Working on personal development projects to build strong programming logic.</strong></li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <span>Skills</span>
+            <ul>
+                <li><strong>Programming & Web:</strong> HTML/CSS, JavaScript, C, C++, and Python</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <span>Projects</span>
+            <ul>
+                <li><strong>Project A:</strong> Builded my first responsive portfolio website from scratch.</li>
+                <li><strong>Project B:</strong> Creating small utility scripts and logic-building programs using Python and C++.</li>
+                <li><strong>Project C:</strong> Hands-on experience in building responsive and interactive web pages using HTML, CSS, and JavaScript."</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <span>Education</span>
+            <ul>
+                <li><strong>Secondary School Education (10th Passed)</strong></li>
+                <li>School: Prayag Bharti School, Jehanabad</li>
+                <li>Completed: 2025</li>
+                <li><p style="padding: 0; margin-top: 5px;">Currently deep-diving into Computer Science fundamentals, logic building, and modern web development technologies independently.</p></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <span>Contact Me</span>
+            <p>Email: anshraj@example.com</p>
+        </section>
+    </main>
+
+</body>
+</html>
