@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta name="google-site-verification" content="3PNHbBKMRMJy_UHlxjqsc8TYTTfv5Fm-t82mUI3Z56g" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>amar77 - Portfolio</title>
+    <title>Amarjeet Kumar - Portfolio</title>
     <style>
         html {
             scroll-behavior: smooth;
@@ -107,14 +106,13 @@
         }
 
         img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
-    display: block;
-    border: 2px solid #4444fc;
-    box-shadow: 0 0 15px rgba(68, 68, 252, 0.5);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            display: block;
+            border: none;
         }
 
         .status.badge {
@@ -156,10 +154,10 @@
             letter-spacing: 1px;
         }
 
-        /* Modern CTA Button Effect */
-        .cta-buttons a {
-            display: table;
-            margin: 25px auto;
+        /* Modern CTA Button & Email Button Styling */
+        .cta-buttons a, .email-btn {
+            display: inline-block;
+            margin: 15px auto;
             text-decoration: none;
             color: #ffffff;
             border: 2px solid #4444fc;
@@ -171,11 +169,11 @@
             box-shadow: 0 0 15px rgba(68, 68, 252, 0.2);
         }
 
-        .cta-buttons a:hover {
+        .cta-buttons a:hover, .email-btn:hover {
             background-color: #4444fc;
             color: #ffffff;
             box-shadow: 0 0 25px rgba(68, 68, 252, 0.8);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         /* Bounce Animated Scroll Down Indicator */
@@ -262,6 +260,10 @@
         .hero-section {
             text-align: center;
         }
+
+        #contact {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -283,7 +285,7 @@
     <main>
         <section class="hero-section">
             <div class="profile-image">
-                <img src="amar.jpg" alt="Ansh Raj">
+                <img src="amar.jpg" alt="Amarjeet Kumar">
             </div>
             <div class="status badge">
                 💻 Exploring HTML/CSS, JavaScript, C, C++, and Python
@@ -322,9 +324,9 @@
         <section id="projects">
             <span>Projects</span>
             <ul>
-                <li><strong>Project A:</strong> Builded my first responsive portfolio website from scratch.</li>
+                <li><strong>Project A:</strong> Built my first responsive portfolio website from scratch.</li>
                 <li><strong>Project B:</strong> Creating small utility scripts and logic-building programs using Python and C++.</li>
-                <li><strong>Project C:</strong> Hands-on experience in building responsive and interactive web pages using HTML, CSS, and JavaScript."</li>
+                <li><strong>Project C:</strong> Hands-on experience in building responsive and interactive web pages using HTML, CSS, and JavaScript.</li>
             </ul>
         </section>
 
@@ -340,7 +342,10 @@
 
         <section id="contact">
             <span>Contact Me</span>
-            <p>Email:weebd777@gmail.com</p>
+            <p style="color: #ffffff; margin-bottom: 20px;">Feel free to reach out to me for collaboration or queries!</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=weebd777@gmail.com" target="_blank" class="email-btn">
+                📩 Send Email via Gmail
+            </a>
         </section>
     </main>
 
