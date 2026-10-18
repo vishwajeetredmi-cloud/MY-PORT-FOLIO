@@ -56,8 +56,9 @@ section{padding:72px 0}
 .isl button.lv i{width:7px;height:7px;border-radius:50%;background:#052014;animation:pu 1.4s ease-in-out infinite}
 @keyframes pu{50%{opacity:.25}}
 .isl a.l.prof{display:flex;align-items:center;gap:9px;padding:4px 16px 4px 4px;margin-right:6px;color:#fff;font:600 14.5px var(--body);border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 0 18px rgba(79,123,255,.35)}
-.av{position:relative;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 12px var(--disp);color:#fff;background:linear-gradient(135deg,var(--a1),var(--a2));overflow:hidden;flex:none}
-.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.av{position:relative;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:700 12px var(--disp);color:#fff;background:linear-gradient(135deg,var(--a1),var(--a2));overflow:hidden;flex:none}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.av canvas{position:absolute;inset:0;width:100%;height:100%;filter:brightness(1.18) contrast(1.05) saturate(1.1)}
 .lvw{position:relative;display:flex}
 .isl a.lt{flex:none;margin-left:6px;padding:8px 17px;border-radius:999px;font:700 13.5px var(--body);color:#fff;white-space:nowrap;background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 20px rgba(79,123,255,.6);animation:gl2 2.4s ease-in-out infinite;transition:transform .3s}
 .isl a.lt:hover{transform:translateY(-2px)}
@@ -214,7 +215,7 @@ html.lite .rv{filter:none;transition:opacity .6s,translate .6s}
 
 <div class="iw"><nav class="isl" id="isl">
   <div class="pl" id="pl"></div>
-  <a class="l prof" href="#top"><span class="av"><img src="amar.jpg" alt="" decoding="async" onerror="this.remove()">AK</span><span class="pn">Amar</span></a>
+  <a class="l prof" href="#top"><span class="av"><img src="amar.jpg" alt="" decoding="async" onload="this.parentNode.style.fontSize=0" onerror="this.remove()">AK</span><span class="pn">Amar</span></a>
   <a class="l" href="#about">About</a>
   <a class="l" href="#projects">Projects</a>
   <a class="l x2" href="#skills">Skills</a>
@@ -418,6 +419,21 @@ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,prog=0,prT=0,sY=0,
   $$('a',mm).forEach(function(a){a.addEventListener('click',shutAll)});
   addEventListener('click',shut);
   addEventListener('scroll',function(){if((mm.classList.contains('open')||dd.classList.contains('open'))&&Math.abs(scrollY-y0)>8)shutAll()},{passive:true});
+})();
+
+/* sharp nav avatar: face crop of amar.jpg, downscaled in steps (no blur) */
+(function(){
+  var ai=$('.av img');if(!ai)return;
+  function go(){
+    var W=ai.naturalWidth,H=ai.naturalHeight;if(!W)return;
+    var S=Math.round((ai.parentNode.clientWidth||36)*Math.min(devicePixelRatio||1,3)),side=Math.min(W*.91,H*.91),
+        sx=Math.max(0,Math.min(W-side,W*.5-side/2)),sy=Math.max(0,Math.min(H-side,H*.41-side/2));
+    var cur=document.createElement('canvas');cur.width=cur.height=Math.round(side);
+    cur.getContext('2d').drawImage(ai,sx,sy,side,side,0,0,cur.width,cur.height);
+    while(cur.width/2>=S){var n=document.createElement('canvas');n.width=n.height=Math.floor(cur.width/2);var nx=n.getContext('2d');nx.imageSmoothingQuality='high';nx.drawImage(cur,0,0,n.width,n.height);cur=n}
+    var c=document.createElement('canvas');c.width=c.height=S;var cx=c.getContext('2d');cx.imageSmoothingQuality='high';cx.drawImage(cur,0,0,S,S);
+    ai.parentNode.insertBefore(c,ai);ai.style.display='none';ai.parentNode.style.fontSize='0'}
+  if(ai.complete&&ai.naturalWidth)go();else ai.addEventListener('load',go);
 })();
 
 /* typing */
